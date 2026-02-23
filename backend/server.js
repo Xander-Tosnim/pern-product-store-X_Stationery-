@@ -54,6 +54,7 @@ app.use(async (req, res, next) => {
 // Product routes
 app.use("/api/products", productRoutes);
 
+// Serve static files from the React frontend in production
 if(process.env.NODE_ENV === "production") {
     // Serve React frontend static files
     app.use(express.static(path.join(__dirname,"/frontend/dist")));
